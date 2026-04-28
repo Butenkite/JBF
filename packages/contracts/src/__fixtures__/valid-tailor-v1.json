@@ -1,0 +1,8 @@
+{
+  "tailorOutputVersion": "1",
+  "summary": "Backend engineer with focus on TypeScript and distributed systems.",
+  "experienceSelections": ["bull-acme-001", "bull-acme-002"],
+  "skillsOrdering": ["skill-typescript", "skill-nodejs"],
+  "omissions": ["bull-old-001"],
+  "rationaleHash": "sha256:dummylonghash"
+}

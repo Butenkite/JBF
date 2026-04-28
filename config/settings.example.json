@@ -1,0 +1,11 @@
+{
+  "$comment": "Stub for future inference and worker configuration (outside Epic A implementation).",
+  "masterResumePath": "./config/master-resume.md",
+  "prompt": {
+    "tailorPromptPath": "./prompts/tailor-v1.md",
+    "tailorOutputSchemaVersion": "1"
+  },
+  "similarity": {
+    "reuseThreshold": 0.88
+  }
+}

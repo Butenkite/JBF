@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.jbf/contracts/tailor-output-v1",
+  "title": "TailorOutputV1",
+  "description": "Structured resume tailoring artifact for regeneration, validation, and cache keys.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "tailorOutputVersion",
+    "summary",
+    "experienceSelections",
+    "skillsOrdering"
+  ],
+  "properties": {
+    "tailorOutputVersion": {
+      "const": "1",
+      "description": "Breaking changes increment the JSON Schema file version (tailor-output-v2.json)."
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Tailored professional summary reflecting the JD."
+    },
+    "experienceSelections": {
+      "type": "array",
+      "description": "Ordered bullet IDs from the master resume to include for this JD.",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9_-]{2,63}$"
+      }
+    },
+    "skillsOrdering": {
+      "type": "array",
+      "description": "Ordered skill IDs from the parsed master resume Skills section.",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9_-]{2,63}$"
+      }
+    },
+    "omissions": {
+      "type": "array",
+      "description": "Bullet or skill IDs explicitly omitted versus the master source.",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9_-]{2,63}$"
+      }
+    },
+    "rationaleHash": {
+      "type": "string",
+      "description": "Stable opaque fingerprint for caching (e.g. hash of rationale + JD slice); Epic C assigns semantics."
+    }
+  }
+}
