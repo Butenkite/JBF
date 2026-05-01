@@ -3,3 +3,8 @@ dist/
 agent-workflows/
 *.tsbuildinfo
 .DS_Store
+artifacts/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm

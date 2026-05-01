@@ -1,5 +1,5 @@
 {
-  "$comment": "Stub for future inference and worker configuration (outside Epic A implementation).",
+  "$comment": "Stub for future inference and worker configuration.",
   "masterResumePath": "./config/master-resume.md",
   "prompt": {
     "tailorPromptPath": "./prompts/tailor-v1.md",
@@ -7,5 +7,14 @@
   },
   "similarity": {
     "reuseThreshold": 0.88
+  },
+  "inference": {
+    "embedding": {
+      "modelId": "Xenova/all-MiniLM-L6-v2",
+      "dimension": 384,
+      "chunkSize": 1500,
+      "chunkOverlap": 150
+    },
+    "cacheDbPath": "./artifacts/embeddings.db"
   }
 }
